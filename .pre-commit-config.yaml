@@ -23,7 +23,7 @@ repos:
     rev: 1.7.0
     hooks:
       - id: interrogate
-        exclude: ^(docs/|tests/)
+        exclude: ^(docs/|tests/|scripts/)
         args: [-c, pyproject.toml]
   - repo: local
     hooks:
