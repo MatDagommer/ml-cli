@@ -5,16 +5,12 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
-  - repo: https://github.com/psf/black
-    rev: 25.11.0
-    hooks:
-      - id: black
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.11.10
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
-        exclude: ^notebooks/.*|^docs/.*$
+        exclude: ^notebooks/.*|^docs/.*|pyproject.toml|pyml_cli/templates/.*$
   - repo: https://github.com/jendrikseipp/vulture
     rev: 'v2.14'
     hooks:
@@ -23,7 +19,7 @@ repos:
     rev: 1.7.0
     hooks:
       - id: interrogate
-        exclude: ^(docs/|tests/|scripts/)
+        exclude: ^(docs/|tests/|scripts/|notebooks/|pyml_cli/templates/*)
         args: [-c, pyproject.toml]
   - repo: local
     hooks:

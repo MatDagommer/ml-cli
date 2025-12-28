@@ -80,6 +80,7 @@ dependencies = [
     "python-dotenv",
     "typer",
     "loguru",
+    "marimo"
 ]
 readme = "README.md"
 
