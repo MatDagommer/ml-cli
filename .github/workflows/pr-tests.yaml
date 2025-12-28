@@ -43,7 +43,7 @@ jobs:
     strategy:
       matrix:
         python-version: ['3.10', '3.11', '3.12', '3.13']
-        environment-type: 'pixi'
+        environment-type: ['pixi']
         test-type: ['unit-tests', 'smoke-tests']
 
     defaults:
@@ -74,7 +74,7 @@ jobs:
         run: pixi run test
 
       - name: Run smoke tests (pixi)
-        if: ${{ matrix.test-type == 'smoke-tests' && matrix.environment-type == 'pixi' && github.repository_owner == 'matdagommer' }}
+        if: ${{ matrix.test-type == 'smoke-tests' && github.repository_owner == 'matdagommer' }}
         run: pixi run pyml
 
       # Upload code coverage only for unit tests
