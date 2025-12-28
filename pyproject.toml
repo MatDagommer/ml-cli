@@ -85,7 +85,7 @@ dependencies = [
 readme = "README.md"
 
 [project.scripts]
-pyml-cli = "pyml_cli.cli:app"
+pyml = "pyml_cli.cli:app"
 
 
 [tool.coverage.run]
