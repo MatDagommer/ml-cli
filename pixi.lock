@@ -5253,7 +5253,7 @@ packages:
 - pypi: ./
   name: pyml-cli
   version: 0.1.4
-  sha256: c66549740d19ce4623bb132e507e204d7ee8e35096d073204115936c42cbde4a
+  sha256: 9de1498c8b207657e3e452bce4ff3d12da7463ee62d004c09569b4596a959cd9
   requires_dist:
   - matplotlib
   - pandas
@@ -5266,6 +5266,7 @@ packages:
   - python-dotenv
   - typer
   - jax
+  - sh
   requires_python: '>=3.10'
 - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pyobjc-core-12.1-py314h3a4d195_0.conda
   sha256: df5af268c5a74b7160d772c263ece6f43257faff571783443e34b5f1d5a61cf2

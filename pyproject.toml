@@ -81,6 +81,7 @@ dependencies = [
     "python-dotenv",
     "typer",
     "jax",
+    "sh",
 ]
 readme = "README.md"
 
