@@ -81,7 +81,7 @@ dependencies = [
     "python-dotenv",
     "typer",
     "jax",
-    "sh",
+    "sh ==2.1",
 ]
 readme = "README.md"
 
@@ -110,7 +110,7 @@ pyml-cli = { path = ".", editable = true }
 typer = ">=0.21.0,<0.22"
 loguru = ">=0.7.3,<0.8"
 cookiecutter = ">=2.6.0,<3"
-sh = ">=2.2.2,<3"
+sh = "==2.1"
 marimo = ">=0.18.4,<0.19"
 
 # NOTE: Testing dependencies (not needed for running program) go here.

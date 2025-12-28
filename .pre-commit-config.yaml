@@ -19,7 +19,7 @@ repos:
     rev: 1.7.0
     hooks:
       - id: interrogate
-        exclude: ^(docs/|tests/|scripts/|notebooks/|pyml_cli/templates/*)
+        exclude: ^(docs/|tests/|scripts/|notebooks/|pyml_cli/templates/)
         args: [-c, pyproject.toml]
   - repo: local
     hooks:
