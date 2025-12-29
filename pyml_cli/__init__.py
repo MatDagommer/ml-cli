@@ -1,12 +1,15 @@
-"""Top-level API for pyml-cli.
-
-This is the file from which you can do:
-
-    from ml_cli import some_function
-
-Use it to control the top-level API of your Python data science project.
-"""
+"""Top-level module for pyml-cli."""
 
 from .version import __version__
+
+# Try importing pixi from sh, if not available, then auto-install pixi
+try:
+    from sh import pixi  # noqa: F401
+except ImportError:
+    err_msg = """To use `pyml-cli`, you need to have `pixi` installed.
+
+Please follow installation instructions available at: https://pixi.sh/latest/
+"""
+    raise ImportError(err_msg)
 
 __all__ = ["__version__"]

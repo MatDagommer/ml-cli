@@ -65,8 +65,8 @@ where = ["."]
 namespaces = false
 
 [project]
-name = "pyml-cli"
-version = "0.1.4"
+name = "{{ cookiecutter.project_name }}"
+version = "0.1.0"
 # NOTE: move dependencies into this section if you need to distribute the project as a Python package.
 requires-python = ">=3.10"
 dependencies = [
@@ -76,17 +76,16 @@ dependencies = [
     "numpy",
     "pyprojroot",
     "scipy",
-    "pymc",
     "seaborn",
     "python-dotenv",
     "typer",
-    "jax",
-    "sh ==2.1",
+    "loguru",
+    "marimo"
 ]
 readme = "README.md"
 
 [project.scripts]
-pyml = "pyml_cli.cli:app"
+{{ cookiecutter.__cli_name }} = "{{ cookiecutter.__module_name }}.cli:app"
 
 
 [tool.coverage.run]
@@ -95,7 +94,7 @@ omit = [
 ]
 
 [tool.vulture]
-paths = ["pyml_cli"]
+paths = ["{{ cookiecutter.__module_name }}", "scripts"]
 min_confidence = 80
 
 [tool.pixi.workspace]
@@ -103,16 +102,14 @@ channels = ["conda-forge"]
 platforms = ["osx-arm64", "linux-64"]
 
 [tool.pixi.pypi-dependencies]
-pyml-cli = { path = ".", editable = true }
+{{ cookiecutter.__package_name }} = { path = ".", editable = true }
 
 # NOTE: Core dependencies (needed for running the program) go here.
 [tool.pixi.dependencies]
 typer = ">=0.21.0,<0.22"
 loguru = ">=0.7.3,<0.8"
 cookiecutter = ">=2.6.0,<3"
-sh = "==2.1"
-marimo = ">=0.18.4,<0.19"
-"ruamel.yaml" = ">=0.18.17,<0.19"
+sh = ">=2.2.2,<3"
 
 # NOTE: Testing dependencies (not needed for running program) go here.
 [tool.pixi.feature.tests.dependencies]
@@ -134,6 +131,9 @@ pixi-kernel = "*"
 
 [tool.pixi.feature.devtools.dependencies]
 pre-commit = "*"
+
+[tool.pixi.feature.api.dependencies]
+fastapi = "*"
 
 # NOTE: CUDA feature is inspired by https://github.com/prefix-dev/pixi/issues/1051#issuecomment-2088820974
 [tool.pixi.feature.cuda]
