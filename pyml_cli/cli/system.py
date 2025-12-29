@@ -1,6 +1,6 @@
 """CLI for interacting with system tools.
 
-Because pyds relies heavily on the presence of anaconda,
+Because pyml relies heavily on the presence of anaconda,
 we look for environment variables such as:
 
 - `CONDA_EXE`
