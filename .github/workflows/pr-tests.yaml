@@ -66,12 +66,12 @@ jobs:
         with:
           pixi-version: latest
           cache: true
-          environments: default
+          environments: [default, tests]
 
       # Run the appropriate test based on matrix variables
       - name: Run unit tests
         if: ${{ matrix.test-type == 'unit-tests' }}
-        run: pixi run test
+        run: pixi run -e tests test
 
       - name: Run smoke tests (pixi)
         if: ${{ matrix.test-type == 'smoke-tests' && github.repository_owner == 'matdagommer' }}
