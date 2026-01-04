@@ -9,7 +9,10 @@ from ..version import __version__
 from .project import init
 from .system import status
 
-app = typer.Typer(pretty_exceptions_show_locals=False)
+app = typer.Typer(
+    pretty_exceptions_show_locals=False,
+    no_args_is_help=True,
+)
 
 app.command()(init)
 app.command()(status)
