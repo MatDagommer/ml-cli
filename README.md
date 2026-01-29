@@ -1,8 +1,6 @@
 # pyml-cli
 
-Initialize ML projects sanely.
-
-Made with ❤️ by Matthieu Dagommer (@MatDagommer).
+I use PyML CLI to initialize my ML projects with a consistent template.
 
 ## Get started with the package
 
